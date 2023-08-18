@@ -8,7 +8,8 @@ import { FeedComponent } from './components/feed/feed.component';
 import { ArticleComponent } from './components/article/article.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NewsService } from './services/news.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]
