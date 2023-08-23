@@ -7,10 +7,11 @@
         <p>{{ article.description }}</p>
         <p><strong>Author:</strong> {{ article.author }}</p>
         <p><strong>Published At:</strong> {{ article.publishedAt | date }}</p>
-
+        <img src="{{article.urlToImage}}" alt="img">
       </mat-card-content>
       <mat-card-actions>
         <a mat-button href="{{ article.url }}" target="_blank">Read More</a>
+
       </mat-card-actions>
     </mat-card>
   </div>

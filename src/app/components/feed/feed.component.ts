@@ -31,7 +31,7 @@ export class FeedComponent implements OnInit {
 
     obtenerNoticias(): void {
       const categoria = 'general'; // Cambia a la categoría deseada
-      const pais = 'mx'; // Cambia al país deseado
+      const pais = 'US'; // Cambia al país deseado
 
       const observer: Observer<any> = {
         next: (response) => {
