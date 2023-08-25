@@ -1,18 +1,27 @@
-<div class="news-feed">
-  <h2 class="mat-h2">Latest News</h2>
-  <div class="news-list">
-    <mat-card class="news-item" *ngFor="let article of noticias">
-      <mat-card-title>{{ article.title }}</mat-card-title>
-      <mat-card-content>
-        <p>{{ article.description }}</p>
-        <p><strong>Author:</strong> {{ article.author }}</p>
-        <p><strong>Published At:</strong> {{ article.publishedAt | date }}</p>
-        <img src="{{article.urlToImage}}" alt="img">
-      </mat-card-content>
+<div class="news-container">
+
+  <div class="news-main">
+    <div class="news-list">
+      <mat-card class="news-item" *ngFor="let article of noticias">
+        <mat-card-content>
+        <div class="news-item-info">
+          <mat-card-title>{{ article.title }}</mat-card-title>
+          <p>{{ article.description }}</p>
+          <p><strong>Author:</strong> {{ article.author }}</p>
+          <p><strong>Published At:</strong> {{ article.publishedAt | date }}</p>
+        </div>
+        <div class="news-item-img">
+          <img src="{{article.urlToImage}}" alt="img">
+        </div>
+        </mat-card-content>
       <mat-card-actions>
         <a mat-button href="{{ article.url }}" target="_blank">Read More</a>
-
       </mat-card-actions>
-    </mat-card>
+      </mat-card>
+    </div>
+  </div>
+  
+  <div class="new-second">
+
   </div>
 </div>
