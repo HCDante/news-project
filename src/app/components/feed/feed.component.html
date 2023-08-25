@@ -5,6 +5,7 @@
       <mat-card-title>{{ article.title }}</mat-card-title>
       <mat-card-content>
         <p>{{ article.description }}</p>
+        <img src="{{ article.url }}" alt=""> 
         <p><strong>Author:</strong> {{ article.author }}</p>
         <p><strong>Published At:</strong> {{ article.publishedAt | date }}</p>
 
