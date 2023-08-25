@@ -13,7 +13,7 @@ export class NewsService {
   constructor(private http: HttpClient) { }
 
 
-  private apiKey = 'a91c8129f8e04631a9293d310a679ce9'; // Reemplaza con tu propia API Key
+  private apiKey = 'a91c8129f8e04631a9293d310a679ce9'; // API Key
   private apiUrl = 'https://newsapi.org/v2';
   //Your API key is: a91c8129f8e04631a9293d310a679ce9
 

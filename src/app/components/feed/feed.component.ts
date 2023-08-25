@@ -20,23 +20,33 @@ import { Article } from 'src/app/models/article.model';
 
 export class FeedComponent implements OnInit {
   noticias: Article[] = [];
-
+  noticiasPrincipales: Article[] = [];
+  noticiasSecundarias: Article[] = [];
 
     constructor( private newsService: NewsService ) { }
 
     ngOnInit(): void {
       this.obtenerNoticias();
-
     }
 
     obtenerNoticias(): void {
       const categoria = 'general'; // Cambia a la categoría deseada
-      const pais = 'mx'; // Cambia al país deseado
+      const pais = 'US'; // Cambia al país deseado
 
       const observer: Observer<any> = {
         next: (response) => {
           this.noticias = response.articles;
-          console.log(this.noticias);
+          console.log('Noticias',this.noticias);
+
+          this.noticias.forEach((element, index) => {
+              if(index < 10){
+                this.noticiasPrincipales.push(element)
+              }
+              else{
+                this.noticiasSecundarias.push(element)
+              }
+          });
+          
         },
         error: (error) => {
           console.error(error);
