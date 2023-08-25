@@ -72,8 +72,50 @@ mat-toolbar{
 
 section.containerDataHeader{
     padding-left: 15px;
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+
     .dateHeader{
-        width: 30%;
+        width: 25%;
        // background: rebeccapurple;
+    }
+    .dataInvestment{
+        display: flex;
+        width: 35%;
+        flex-direction: row-reverse;
+        align-items: center;
+        .nameInvestment{
+            color: rgb(18, 18, 18);
+            font-family: nyt-franklin, helvetica, arial, sans-serif;
+            font-size: 0.75rem;   
+        }
+        .valueInvestement{
+            font-family: nyt-franklin, helvetica, arial, sans-serif;
+            font-size: 0.75rem;
+            margin-right: 5px;
+            color: rgb(63, 137, 59);
+        }
+    }
+}
+
+section.containerNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    div{
+        width: 60%;
+        ul{
+            display: inline-flex;
+            list-style: none;
+
+                li{
+                    width: 60px;
+                    color: black;
+                    font-family: nyt-franklin,helvetica,arial,sans-serif;
+                    font-weight: 500;
+                    font-size: 0.75rem;
+                    line-height: 0.75rem;
+                }
+        }
     }
 }
