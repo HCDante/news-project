@@ -5,7 +5,9 @@ import { ArticleComponent } from './components/article/article.component';
 import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
-  {path:'', component:FeedComponent},
+  { path: '', redirectTo: '/feed', pathMatch: 'full' },
+  { path: 'feed', component: FeedComponent },
+  { path: 'feed/:categoria', component: FeedComponent },
   {path:'article', component:ArticleComponent},
   {path:'about', component:AboutComponent}
 ];
