@@ -1,4 +1,67 @@
-<div class="news-container">
+<mat-sidenav-container>
+  <!-- ... (contenido del menú lateral) ... -->
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <!-- ... (contenido de la barra de herramientas) ... -->
+    </mat-toolbar>
+
+    <section class="containerDataHeader">
+      <!-- ... (contenido de la cabecera de la página) ... -->
+    </section>
+
+    <section class="containerNav">
+      <!-- ... (barra de navegación) ... -->
+    </section>
+
+    <div class="news-container">
+      <div *ngIf="noticias$ | async as noticias">
+        <!-- Iterar a través de los artículos de noticias -->
+        <div *ngFor="let article of noticias.articles" class="news-item">
+          <h2>{{ article.title }}</h2>
+          <p>{{ article.description }}</p>
+          <a href="{{ article.url }}" target="_blank">Leer más</a>
+        </div>
+      </div>
+      <div *ngIf="(noticias$ | async) === undefined">
+        Cargando noticias...
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="news-container">
 
   <div class="news-main">
     <div class="news-list">
@@ -24,4 +87,4 @@
   <div class="new-second">
 
   </div>
-</div>
+</div> -->
