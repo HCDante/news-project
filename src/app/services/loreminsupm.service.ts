@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LoreminsupmService {
 
-  private url = 'https://loripsum.net/api/10/short/headers';
+  private url = 'https://loripsum.net/api';
 
   constructor(private http: HttpClient) { }
 
