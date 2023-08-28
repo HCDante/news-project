@@ -19,7 +19,7 @@ export class FeedComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const selectedCategory = params['category'];
-      this.noticias$ = this.newsService.obtenerNoticias(selectedCategory, 'US');
+      this.noticias$ = this.newsService.obtenerNoticias('general', 'US');
       console.log('Noticias', this.noticias$);
     });
   }
