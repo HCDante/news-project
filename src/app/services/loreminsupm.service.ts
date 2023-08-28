@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class LoreminsupmService {
 
-  private url = 'https://loripsum.net/api';
+  private url = 'https://loripsum.net/api/10/short/headers';
 
   constructor(private http: HttpClient) { }
 
-  getLoreminsupm(paragraphs: number): Observable<string> {
-    return this.http.get<any>(`${this.url}/{paragraphs}/short/plaintext`);
+  getLoreminsupm(): Observable<string> {
+    return this.http.get<any>(this.url);
   }
 }

@@ -12,7 +12,7 @@ export class ArticleComponent implements OnInit {
   constructor(private loreminsupmService: LoreminsupmService) { }
 
   ngOnInit(): void {
-    this.loreminsupmService.getLoreminsupm(3).subscribe(data => {
+    this.loreminsupmService.getLoreminsupm().subscribe(data => {
       this.datos = data;
       console.log(this.datos);
     });
