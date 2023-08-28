@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FeedComponent } from './components/feed/feed.component';
 
 
 @Component({
