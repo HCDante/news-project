@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
 import { Observer } from 'rxjs';
 import { Article } from 'src/app/models/article.model';
@@ -14,14 +14,15 @@ import { ArticleComponent } from '../article/article.component';
 
 export class FeedComponent implements OnInit {
   noticias$: Observable<{ articles: Article[] }> | undefined;
-  noticiasSecundarias: any;
-  noticiasPrincipales: any;
-  
-  constructor(private newsService: NewsService, private route: ActivatedRoute) {}
+  // noticiasSecundarias: any;
+  // noticiasPrincipales: any;
+  selectedArticle: Article | undefined;
+
+  constructor(private newsService: NewsService,
+              private route: ActivatedRoute,) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      console.log('Params', params);
       const selecionarCategoria = params.get('categoria');
       this.noticias$ = this.newsService.obtenerNoticias(selecionarCategoria ?? 'general', 'US');
 
@@ -29,10 +30,21 @@ export class FeedComponent implements OnInit {
       //   index < 10 ? this.noticiasPrincipales.push(element) : this.noticiasSecundarias.push(element);
       // });
 
-
-      console.log('Noticias', this.noticias$);
     });
+
   }
+
+  onSelectArticle(article: Article) {
+    this.selectedArticle = article;
+
+    console.log('Article', this.selectedArticle);
+  }
+
+  onCloseArticle() {
+    this.selectedArticle = undefined;
+
+  }
+
 }
 
 

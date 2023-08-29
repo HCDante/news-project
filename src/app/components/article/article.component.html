@@ -1,1 +1,16 @@
-<p>{{ datos | json }}</p>
+<div news-item *ngIf="article">
+  <mat-card-content>
+    <div class="news-item-info">
+      <mat-card-title>{{ article.title }}</mat-card-title>
+      <p>{{ article.description }}</p>
+      <p><strong>Author:</strong> {{ article.author }}</p>
+      <p><strong>Published At:</strong> {{ article.publishedAt | date }}</p>
+    </div>
+    <div class="news-item-img">
+      <img src="{{ article.urlToImage }}" alt="img">
+    </div>
+  </mat-card-content>
+</div>
+<div *ngIf="!article">
+  <p>No article selected.</p>
+</div>
