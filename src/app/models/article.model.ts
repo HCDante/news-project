@@ -11,3 +11,10 @@ export interface Article {
   publishedAt: string;
   content: string;
 }
+
+export interface Noticias {
+  articles: Article[];  
+  status: string;
+  totalResults: number;
+}
+

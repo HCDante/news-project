@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Article } from '../models/article.model';
+import { Article, Noticias } from '../models/article.model';
 
 
 @Injectable({
@@ -19,7 +19,7 @@ export class NewsService {
 
   obtenerNoticias(categoria: string, pais: string): Observable<{ articles: Article[] }> {
     const url = `${this.apiUrl}/top-headlines?country=${pais}&category=${categoria}&apiKey=${this.apiKey}`;
-    return this.http.get<{ articles: Article[] }>(url).pipe(
+    return this.http.get<Noticias>(url).pipe(
       catchError(error => {
         console.error('Error fetching news:', error);
         throw error;
