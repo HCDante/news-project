@@ -4,6 +4,7 @@ import { Observer } from 'rxjs';
 import { Article } from 'src/app/models/article.model';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { ArticleComponent } from '../article/article.component';
 
 @Component({
   selector: 'app-feed',
@@ -15,7 +16,7 @@ export class FeedComponent implements OnInit {
   noticias$: Observable<{ articles: Article[] }> | undefined;
   noticiasSecundarias: any;
   noticiasPrincipales: any;
-
+  
   constructor(private newsService: NewsService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {

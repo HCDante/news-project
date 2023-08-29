@@ -16,7 +16,7 @@
         </div>
         </mat-card-content>
       <mat-card-actions>
-        <a routerLink="/article" mat-button href="{{ article.url }}">Read More</a>
+        <a [routerLink]="['/article',article]" queryParamsHandling="preserve" href="{{ article.url }}">Read More</a>
       </mat-card-actions>
       </mat-card>
     </div>

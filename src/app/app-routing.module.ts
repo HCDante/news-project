@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/feed', pathMatch: 'full' },
   { path: 'feed', component: FeedComponent },
   { path: 'feed/:categoria', component: FeedComponent },
-  {path:'article', component:ArticleComponent},
+  {path:'article/:id', component:ArticleComponent},
   {path:'about', component:AboutComponent}
 ];
 
