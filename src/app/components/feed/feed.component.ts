@@ -13,13 +13,22 @@ import { Observable } from 'rxjs';
 
 export class FeedComponent implements OnInit {
   noticias$: Observable<{ articles: Article[] }> | undefined;
+  noticiasSecundarias: any;
+  noticiasPrincipales: any;
 
   constructor(private newsService: NewsService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      const selectedCategory = params['category'];
-      this.noticias$ = this.newsService.obtenerNoticias('general', 'US');
+    this.route.paramMap.subscribe(params => {
+      console.log('Params', params);
+      const selecionarCategoria = params.get('categoria');
+      this.noticias$ = this.newsService.obtenerNoticias(selecionarCategoria ?? 'general', 'US');
+
+      // this.noticias$.forEach((element: any,index: number) => {
+      //   index < 10 ? this.noticiasPrincipales.push(element) : this.noticiasSecundarias.push(element);
+      // });
+
+
       console.log('Noticias', this.noticias$);
     });
   }
