@@ -1,29 +1,28 @@
 <div class="news-container">
-
   <div class="news-main">
-    <div class="news-list">
-      <div *ngIf="noticias$ | async as noticias" >
-      <mat-card class="news-item" *ngFor="let article of noticias.articles">
-        <mat-card-content>
-        <div class="news-item-info">
-          <mat-card-title>{{ article.title }}</mat-card-title>
-          <p>{{ article.description }}</p>
-          <p><strong>Author:</strong> {{ article.author }}</p>
-          <p><strong>Published At:</strong> {{ article.publishedAt | date }}</p>
-        </div>
-        <div class="news-item-img">
-          <img src="{{article.urlToImage}}" alt="img">
-        </div>
-        </mat-card-content>
-      <mat-card-actions>
-        <a [routerLink]="['/article',article]" queryParamsHandling="preserve" href="{{ article.url }}">Read More</a>
-      </mat-card-actions>
-      </mat-card>
+    <div class="news-list" *ngIf="!selectedArticle">
+      <div *ngIf="noticias$ | async as noticias">
+        <mat-card class="news-item" *ngFor="let article of noticias.articles">
+          <mat-card-content>
+            <div class="news-item-info">
+              <mat-card-title>{{ article.title }}</mat-card-title>
+              <p>{{ article.description }}</p>
+              <p><strong>Author:</strong> {{ article.author }}</p>
+              <p><strong>Published At:</strong> {{ article.publishedAt | date }}</p>
+            </div>
+            <div class="news-item-img">
+              <img src="{{ article.urlToImage }}" alt="img">
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <a (click)="onSelectArticle(article)">Read More</a>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
+
+    <div class="new-second" *ngIf="selectedArticle">
+      <app-article [article]="selectedArticle"></app-article>
     </div>
-  </div>
-
-  <div class="new-second">
-
   </div>
 </div>

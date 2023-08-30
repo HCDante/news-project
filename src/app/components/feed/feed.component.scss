@@ -1,55 +1,68 @@
+.news-container {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
 
-div.news-container{
-  box-sizing: border-box;
-  display:inline-block;
-  padding: 0 30px 0 30px;
-  width: 100%;
-  .news-main{
-    width: 80%;
-    border-right: 1px solid rgb(0,0, 0, .2);
-    .news-list{
-      padding-right: 15px;
-      mat-card{
-        width: 100%;
-        border-bottom: 1px solid black;
-        margin-bottom: 10px;
-        mat-card-content{
-          display: inline-flex;
-          .news-item-img{
-            box-sizing: border-box;
-            width:60%;
-            img{
-              width: 100%;
-            }
-          }
-          .news-item-info{
-            width: 40%;
+.news-main {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
 
-          }
-        }
-      }
+.news-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.news-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .news-item-info {
+    margin-bottom: 10px;
+
+    mat-card-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
+
+    p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.4;
+    }
+  }
+
+  .news-item-img img {
+    width: 100%;
+    border-radius: 3px;
   }
 }
 
-mat-card-title{
-  font-family: nyt-cheltenham,georgia,'times new roman',times,serif;
-  font-size: 1.2rem;
-  line-height: 1.15em;
-  margin: 0;
-  color: black;
-  font-weight: 700;
-  -webkit-font-smoothing: antialiased;
-  margin-bottom: 20px;
+.new-second {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-p{
-  position: relative;
-    font-size: 0.875rem;
-    -webkit-letter-spacing: 0.1px;
-    -moz-letter-spacing: 0.1px;
-    -ms-letter-spacing: 0.1px;
-    letter-spacing: 0.1px;
-    line-height: 1.1875rem;
+@media (max-width: 768px) {
+  .news-list {
+    grid-template-columns: 1fr;
+  }
 }
-
